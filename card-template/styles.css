@@ -1,0 +1,87 @@
+:root {
+  --background-button: #d5873b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-card {
+  background-color: rgb(124, 123, 123);
+  border-radius: 10px;
+  max-width: 350px;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+}
+
+.container-img img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+}
+
+.container-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-profile img {
+  border-radius: 100%;
+  width: 60px;
+}
+
+.container-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.location,
+.email {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+/* section folllow */
+
+.container-follow {
+  display: flex;
+  justify-content: space-around;
+}
+
+.followers {
+  text-align: center;
+  border: 1px solid #d5873b;
+  padding: 1rem;
+  width: 100%;
+}
+
+.following {
+  text-align: center;
+  border: 1px solid #d5873b;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* button */
+.container-button button {
+  width: 100%;
+}
+
+.follow {
+  padding: 1rem;
+  border-radius: 0 0 10px 10px;
+  border: none;
+  background-color: var(--background-button);
+}
