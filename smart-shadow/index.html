@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Letter</title>
+    <style>
+      body {
+        background-color: #242424;
+        color: white;
+      }
+
+      section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100dvh;
+      }
+
+      article {
+        height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/09/vigilante-deku.jpg?q=70&fit=crop&w=943&h=&dpr=1");
+        object-fit: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 600px;
+        height: 600px;
+      }
+
+      article::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        /*position: absolute; */
+        background: inherit;
+        filter: blur(40px) saturate(400%);
+        z-index: -1;
+        width: 600px;
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <article></article>
+    </section>
+  </body>
+</html>
