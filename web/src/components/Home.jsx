@@ -1,9 +1,9 @@
 import { Github } from "./icons/Github"
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
-      <section className="flex justify-center items-center flex-col w-2/3 gap-6 mt-60">
+      <section className="flex justify-center items-center flex-col sm:w-full lg:w-2/3 gap-6 mt-60 m-auto">
         <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#883aea] via-[#f4edfc] to-[#ffff]">
           Heim components
         </h1>
@@ -24,3 +24,5 @@ export const Home = () => {
     </>
   )
 }
+
+export default Home
