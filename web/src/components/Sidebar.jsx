@@ -14,7 +14,7 @@ const Sidebar = () => {
           <li key={section.name}>
             <Link
               to={section.path}
-              className="block px-4 py-2 rounded hover:bg-gray-700"
+              className="block p-2 rounded hover:bg-[#212121]"
             >
               {section.name}
             </Link>
