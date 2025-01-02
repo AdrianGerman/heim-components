@@ -2,7 +2,8 @@ import { Link } from "react-router-dom"
 
 const sections = [
   { name: "Home", path: "/" },
-  { name: "Cards", path: "/cards" }
+  { name: "Cards", path: "/cards" },
+  { name: "Images", path: "/images" }
 ]
 
 const Sidebar = () => {

@@ -1,6 +1,7 @@
 import Home from "./components/Home"
 import Sidebar from "./components/Sidebar"
 import Cards from "./components/pages/Cards"
+import Images from "./components/pages/Images"
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cards" element={<Cards />} />
+            <Route path="/images" element={<Images />} />
           </Routes>
         </main>
       </div>
