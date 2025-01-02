@@ -16,11 +16,13 @@ const Images = () => {
               {component.name}
             </h2>
 
-            <img
-              src={component.image}
-              alt={component.name}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-            />
+            <a href={component.fileUrl} target="_blank">
+              <img
+                src={component.image}
+                alt={component.name}
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
+            </a>
 
             <p className="text-gray-400 mb-6">{component.description}</p>
 
