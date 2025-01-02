@@ -7,9 +7,23 @@ export const components = {
       description: "Un componente de tarjeta simple.",
       image: "/projects/cards/01.webp",
       fileUrl: "/projects/cards/simple-card.html",
-      codeUrl:
-        "https://github.com/AdrianGerman/templates-heim/blob/main/web/public/projects/simple-card.html",
-      render: () => <div className="p-4 border rounded">Simple card</div>
+      codeUrl: ""
+    }
+  ],
+  images: [
+    {
+      name: "Image animation scroll",
+      description: "Galería de imágenes con efecto vertical de scroll.",
+      image: "/projects/images/02.webp",
+      fileUrl: "/projects/images/image-scroll.html",
+      codeUrl: ""
+    },
+    {
+      name: "Image gallery vertical",
+      description: "Galería de imagines vertical con transiciones.",
+      image: "/projects/images/03.webp",
+      fileUrl: "/projects/images/image-gallery-vertical.html",
+      codeUrl: ""
     }
   ],
   loaders: [
