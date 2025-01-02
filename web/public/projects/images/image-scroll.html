@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation Scroll with CSS and HTML</title>
+    <style>
+      body {
+        background-color: #242424;
+        color: white;
+      }
+
+      .scroll {
+        display: grid;
+        padding-block: 128px;
+        place-content: center;
+        gap: 8px;
+      }
+      .scroll img {
+        width: 250px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+
+      .scroll img {
+        view-timeline-name: --reveal;
+        animation-name: show;
+        animation-fill-mode: both;
+        animation-timeline: --reveal;
+        animation-range: entry 25% cover 50%;
+      }
+
+      @keyframes show {
+        from {
+          opacity: 0;
+          scale: 10%;
+        }
+        to {
+          opacity: 1;
+          scale: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="scroll">
+      <img
+        src="https://store-images.s-microsoft.com/image/apps.44413.65985311967005000.4f51b5e9-febf-4990-8951-33ba59b634c9.924253ef-36b2-4cc0-8bb1-9a97c88d4828"
+        alt="stardew valley"
+      />
+      <img
+        src="https://media.vandal.net/t200/46558/terraria-20196289252376_6.jpg"
+        alt="terraria"
+      />
+      <img
+        src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2018/03/hollow-knight-portada.jpg?tf=256x"
+        alt="hollow knight"
+      />
+      <img
+        src="https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/ncom/software/switch/70010000006442/691ba3e0801180a9864cc8a7694b6f98097f9d9799bc7e3dc6db92f086759252"
+        alt="celeste"
+      />
+      <img
+        src="https://cdkeyprices.mx/images/games/5632963/starbound-desktop-logo-all.jpg"
+        alt="starbound"
+      />
+    </section>
+  </body>
+</html>
