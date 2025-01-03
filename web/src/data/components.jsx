@@ -24,6 +24,14 @@ export const components = {
       image: "/projects/images/03.webp",
       fileUrl: "/projects/images/image-gallery-vertical.html",
       codeUrl: ""
+    },
+    {
+      name: "Image smart shadow",
+      description:
+        "Fondo de imagen personalizado en base a la imagen principal.",
+      image: "/projects/images/04.webp",
+      fileUrl: "/projects/images/smart-shadow.html",
+      codeUrl: ""
     }
   ],
   loaders: [
