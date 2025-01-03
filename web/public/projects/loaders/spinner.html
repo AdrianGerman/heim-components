@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spinner</title>
+    <style>
+      html {
+        background-color: #242424;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100dvh;
+      }
+      .spinner {
+        width: 36px;
+        height: 36px;
+        border: 5px solid #fff;
+        border-top-color: #09f;
+        border-radius: 100%;
+        animation: spin 1s infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      class="spinner"
+      role="status"
+      aria-live="polite"
+      aria-label="Cargando"
+    ></div>
+  </body>
+</html>

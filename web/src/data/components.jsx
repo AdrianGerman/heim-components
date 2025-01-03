@@ -38,7 +38,9 @@ export const components = {
     {
       name: "Loader Circular",
       description: "Un loader circular simple.",
-      render: () => <div className="loader-circle"></div>
+      image: "/projects/loaders/05.webp",
+      fileUrl: "/projects/loaders/spinner.html",
+      codeUrl: ""
     }
   ]
 }

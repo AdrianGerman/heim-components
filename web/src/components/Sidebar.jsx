@@ -4,7 +4,8 @@ import { Menu } from "./icons/Menu"
 const sections = [
   { name: "Home", path: "/" },
   { name: "Cards", path: "/cards" },
-  { name: "Images", path: "/images" }
+  { name: "Images", path: "/images" },
+  { name: "Loaders", path: "/loaders" }
 ]
 
 const Sidebar = ({ toggleSidebar }) => {
