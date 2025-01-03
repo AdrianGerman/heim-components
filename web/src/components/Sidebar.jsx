@@ -9,7 +9,7 @@ const sections = [
 
 const Sidebar = ({ toggleSidebar }) => {
   return (
-    <nav className="w-64 bg-[#171717] text-white h-full p-4 relative shadow-lg">
+    <nav className="w-64 bg-[#171717] text-white h-full p-4 relative shadow-lg animate-fade">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl font-bold">Secciones</h2>
         <button className="" onClick={toggleSidebar}>

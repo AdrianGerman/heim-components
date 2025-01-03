@@ -3,7 +3,7 @@ import { Github } from "./icons/Github"
 const Home = () => {
   return (
     <>
-      <section className="flex justify-center items-center flex-col sm:w-full lg:w-2/3 gap-6 mt-60 m-auto">
+      <section className="flex justify-center items-center flex-col sm:w-full lg:w-2/3 gap-6 mt-60 m-auto animate-fade-in-up">
         <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#883aea] via-[#f4edfc] to-[#ffff]">
           Heim components
         </h1>
