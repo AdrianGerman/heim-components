@@ -4,6 +4,7 @@ import Home from "./components/Home"
 import Sidebar from "./components/Sidebar"
 import Cards from "./components/pages/Cards"
 import Images from "./components/pages/Images"
+import Loaders from "./components/pages/Loaders"
 
 import { Menu } from "./components/icons/Menu"
 
@@ -45,6 +46,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cards" element={<Cards />} />
             <Route path="/images" element={<Images />} />
+            <Route path="/loaders" element={<Loaders />} />
           </Routes>
         </main>
       </div>
