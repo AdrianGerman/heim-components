@@ -1,4 +1,6 @@
 import { components } from "../../data/components"
+import { Demo } from "../icons/Demo"
+import { Github } from "../icons/Github"
 
 const Cards = () => {
   return (
@@ -25,21 +27,23 @@ const Cards = () => {
 
             <p className="text-gray-400 mb-6">{component.description}</p>
 
-            <div className="flex justify-between">
+            <div className="flex justify-between sm:gap-1">
               <a
                 href={component.fileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-center text-white bg-blue-600 rounded-md hover:bg-blue-700 transition"
               >
-                Previsualización
+                <Demo />
+                Demo
               </a>
               <a
                 href={component.codeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-sm font-medium text-center text-white bg-gray-600 rounded-lg hover:bg-gray-700 transition"
+                className="flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-800 rounded-md hover:bg-gray-700 transition"
               >
+                <Github />
                 Código
               </a>
             </div>
