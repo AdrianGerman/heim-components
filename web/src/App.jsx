@@ -9,23 +9,38 @@ import { Menu } from "./components/icons/Menu"
 
 function App() {
   const [isSidebarVisible, setSidebarVisible] = useState(true)
+  const [isSidebarFullyHidden, setSidebarFullyHidden] = useState(false)
 
   const toggleSidebar = () => {
-    setSidebarVisible(!isSidebarVisible)
+    if (isSidebarVisible) {
+      setSidebarVisible(false)
+      setTimeout(() => {
+        setSidebarFullyHidden(true)
+      }, 500)
+    } else {
+      setSidebarFullyHidden(false)
+      setSidebarVisible(true)
+    }
   }
 
   return (
     <Router>
       <div className="flex h-screen">
-        {isSidebarVisible && <Sidebar toggleSidebar={toggleSidebar} />}
+        <div
+          className={`bg-[#171717] text-white shadow-lg h-full transition-all duration-500 ${
+            isSidebarVisible ? "w-64" : "w-0"
+          } overflow-hidden`}
+        >
+          <Sidebar toggleSidebar={toggleSidebar} />
+        </div>
 
-        {!isSidebarVisible && (
+        {isSidebarFullyHidden && (
           <button onClick={toggleSidebar} className="fixed top-4 left-4 z-50">
             <Menu />
           </button>
         )}
 
-        <main className="flex-1 overflow-y-auto p-6">
+        <main className="flex-1 overflow-y-auto p-6 transition-all duration-300">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cards" element={<Cards />} />
