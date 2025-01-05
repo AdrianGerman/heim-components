@@ -32,15 +32,15 @@ const Section = ({ title, data }) => {
   }
 
   return (
-    <div className="p-6">
+    <div className="max-w-7xl m-auto">
       <h1 className="text-4xl font-bold text-center text-gray-200 mb-8">
         {title}
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
         {data.map((component, index) => (
           <div
             key={index}
-            className="bg-[#171717] shadow-lg p-6 rounded-lg hover:shadow-2xl transform hover:-translate-y-1 transition duration-300"
+            className="bg-[#171717] shadow-lg p-6 rounded-lg hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 min-w-60"
           >
             <h2 className="text-xl font-semibold text-gray-100 mb-4">
               {component.name}
@@ -50,13 +50,13 @@ const Section = ({ title, data }) => {
               <img
                 src={component.image}
                 alt={component.name}
-                className="w-full h-48 object-cover rounded-lg mb-4"
+                className="w-full max-h-60 object-cover rounded-md mb-4"
               />
             </a>
 
             <p className="text-gray-400 mb-6">{component.description}</p>
 
-            <div className="flex justify-between sm:gap-1">
+            <div className="flex gap-2">
               <a
                 href={component.fileUrl}
                 target="_blank"
@@ -67,7 +67,7 @@ const Section = ({ title, data }) => {
                 Demo
               </a>
               <button
-                onClick={() => openModal(component.codeUrl)} // Carga el código desde el archivo
+                onClick={() => openModal(component.codeUrl)}
                 className="flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-800 rounded-md hover:bg-gray-700 transition"
               >
                 <Github />
