@@ -1,5 +1,3 @@
-import React from "react"
-
 export const components = {
   cards: [
     {
@@ -16,14 +14,14 @@ export const components = {
       description: "Galería de imágenes con efecto vertical de scroll.",
       image: "/projects/images/02.webp",
       fileUrl: "/projects/images/image-scroll.html",
-      codeUrl: "/example/images/image-scroll.html"
+      codeUrl: "/examples/images/image-scroll.html"
     },
     {
       name: "Image gallery vertical",
       description: "Galería de imagines vertical con transiciones.",
       image: "/projects/images/03.webp",
       fileUrl: "/projects/images/image-gallery-vertical.html",
-      codeUrl: "/example/images/image-gallery-vertical.html"
+      codeUrl: "/examples/images/image-gallery-vertical.html"
     },
     {
       name: "Image smart shadow",
@@ -31,7 +29,7 @@ export const components = {
         "Fondo de imagen personalizado en base a la imagen principal.",
       image: "/projects/images/04.webp",
       fileUrl: "/projects/images/smart-shadow.html",
-      codeUrl: "/example/images/smart-shadow.html"
+      codeUrl: "/examples/images/smart-shadow.html"
     }
   ],
   loaders: [
@@ -40,7 +38,7 @@ export const components = {
       description: "Un loader circular simple.",
       image: "/projects/loaders/05.webp",
       fileUrl: "/projects/loaders/spinner.html",
-      codeUrl: "/example/loaders/spinner.html"
+      codeUrl: "/examples/loaders/spinner.html"
     }
   ]
 }
