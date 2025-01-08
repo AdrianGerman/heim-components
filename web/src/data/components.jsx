@@ -36,9 +36,16 @@ export const components = {
     {
       name: "Loader Circular",
       description: "Un loader circular simple.",
-      image: "/projects/loaders/spinner.webp",
+      image: "/projects/loaders/spinner.gif",
       fileUrl: "/projects/loaders/spinner.html",
       codeUrl: "/examples/loaders/spinner.html"
+    },
+    {
+      name: "Loader Cuadricular",
+      description: "Un loader cuadrado con colores ajustables.",
+      image: "/projects/loaders/square.gif",
+      fileUrl: "/projects/loaders/square.html",
+      codeUrl: "/examples/loaders/square.html"
     }
   ]
 }
