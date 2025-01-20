@@ -5,7 +5,8 @@ const sections = [
   { name: "Home", path: "/" },
   { name: "Cards", path: "/cards" },
   { name: "Images", path: "/images" },
-  { name: "Loaders", path: "/loaders" }
+  { name: "Loaders", path: "/loaders" },
+  { name: "Buttons", path: "/buttons" }
 ]
 
 const Sidebar = ({ toggleSidebar }) => {

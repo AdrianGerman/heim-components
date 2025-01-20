@@ -47,5 +47,29 @@ export const components = {
       fileUrl: "/projects/loaders/square.html",
       codeUrl: "/examples/loaders/square.html"
     }
+  ],
+  buttons: [
+    {
+      name: "Button border",
+      description:
+        "Estilo de botón clásico, con un borde para mejorar la visibilidad.",
+      image: "/projects/buttons/button-border.webp",
+      fileUrl: "/projects/buttons/button-border.html",
+      codeUrl: "/examples/buttons/button-border.html"
+    },
+    {
+      name: "Button dashed",
+      description: "Estilo de botón con lindo efecto en el borde.",
+      image: "/projects/buttons/button-dashed.webp",
+      fileUrl: "/projects/buttons/button-dashed.html",
+      codeUrl: "/examples/buttons/button-dashed.html"
+    },
+    {
+      name: "Hover button",
+      description: "Efecto de botones al hacer hover",
+      image: "/projects/buttons/hover-button.webp",
+      fileUrl: "/projects/buttons/hover-button.html",
+      codeUrl: "/examples/buttons/hover-button.html"
+    }
   ]
 }

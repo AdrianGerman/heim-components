@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar"
 import Cards from "./components/pages/Cards"
 import Images from "./components/pages/Images"
 import Loaders from "./components/pages/Loaders"
+import Buttons from "./components/pages/Buttons"
 
 import { Menu } from "./components/icons/Menu"
 
@@ -47,6 +48,7 @@ function App() {
             <Route path="/cards" element={<Cards />} />
             <Route path="/images" element={<Images />} />
             <Route path="/loaders" element={<Loaders />} />
+            <Route path="/buttons" element={<Buttons />} />
           </Routes>
         </main>
       </div>
