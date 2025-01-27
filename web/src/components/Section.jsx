@@ -1,22 +1,26 @@
 import { useState } from "react"
 import { Demo } from "./icons/Demo"
 import { Github } from "./icons/Github"
+import { CloseIcon } from "./icons/CloseIcon"
 
 const Section = ({ title, data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [codeToShow, setCodeToShow] = useState("")
   const [loadingCode, setLoadingCode] = useState(false)
-  const [codeType, setCodeType] = useState("htmlCss")
+  const [activeCodeType, setActiveCodeType] = useState("HTML/CSS")
+  const [currentComponent, setCurrentComponent] = useState(null)
 
-  const openModal = async (component) => {
-    setLoadingCode(true)
+  const openModal = (component) => {
     setIsModalOpen(true)
+    setCurrentComponent(component)
+    loadCode(component.codeUrlHtmlCss)
+    setActiveCodeType("HTML/CSS")
+  }
+
+  const loadCode = async (codeUrl) => {
+    setLoadingCode(true)
     try {
-      const response = await fetch(
-        codeType === "htmlCss"
-          ? component.codeUrlHtmlCss
-          : component.codeUrlTailwind
-      )
+      const response = await fetch(codeUrl)
       const code = await response.text()
       setCodeToShow(code)
     } catch (error) {
@@ -29,12 +33,24 @@ const Section = ({ title, data }) => {
   const closeModal = () => {
     setIsModalOpen(false)
     setCodeToShow("")
-    setCodeType("htmlCss")
+    setCurrentComponent(null)
+    setActiveCodeType("HTML/CSS")
   }
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(codeToShow)
     alert("Código copiado al portapapeles!")
+  }
+
+  const handleCodeTypeChange = (codeType) => {
+    if (currentComponent) {
+      const codeUrl =
+        codeType === "HTML/CSS"
+          ? currentComponent.codeUrlHtmlCss
+          : currentComponent.codeUrlTailwind
+      setActiveCodeType(codeType)
+      loadCode(codeUrl)
+    }
   }
 
   return (
@@ -83,34 +99,42 @@ const Section = ({ title, data }) => {
           </div>
         ))}
       </div>
-
       {/* Modal */}
-      {isModalOpen && (
+      {isModalOpen && currentComponent && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-[#171717] p-6 rounded-lg w-11/12 md:w-3/4 lg:w-2/3 h-3/5 shadow-lg flex flex-col">
-            <h2 className="text-xl font-bold text-gray-100 mb-4">Código</h2>
-            <div className="flex gap-4 mb-4">
+          <div className="bg-[#171717] p-6 rounded-lg w-11/12 md:w-3/4 lg:w-2/3 h-4/5 shadow-lg flex flex-col">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-bold text-gray-100">
+                Código - {activeCodeType}
+              </h2>
+              <button onClick={closeModal} className="text-sm">
+                <CloseIcon className=" text-red-600 rounded-md hover:text-red-900 transition" />
+              </button>
+            </div>
+
+            <div className="flex justify-start gap-4 mb-4">
               <button
-                onClick={() => setCodeType("htmlCss")}
-                className={`px-4 py-2 text-sm text-white rounded-md transition ${
-                  codeType === "htmlCss"
-                    ? "bg-blue-600"
-                    : "bg-gray-800 hover:bg-gray-700"
-                }`}
+                onClick={() => handleCodeTypeChange("HTML/CSS")}
+                className={`px-4 py-2 text-sm rounded-md ${
+                  activeCodeType === "HTML/CSS"
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                } transition`}
               >
-                HTML & CSS
+                HTML/CSS
               </button>
               <button
-                onClick={() => setCodeType("tailwind")}
-                className={`px-4 py-2 text-sm text-white rounded-md transition ${
-                  codeType === "tailwind"
-                    ? "bg-blue-600"
-                    : "bg-gray-800 hover:bg-gray-700"
-                }`}
+                onClick={() => handleCodeTypeChange("Tailwind CSS")}
+                className={`px-4 py-2 text-sm rounded-md ${
+                  activeCodeType === "Tailwind CSS"
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                } transition`}
               >
                 Tailwind CSS
               </button>
             </div>
+
             {loadingCode ? (
               <p className="text-gray-400">Cargando código...</p>
             ) : (
@@ -121,18 +145,13 @@ const Section = ({ title, data }) => {
                 {codeToShow}
               </pre>
             )}
+
             <div className="flex justify-end gap-4 mt-4">
               <button
                 onClick={copyToClipboard}
                 className="px-4 py-2 text-sm text-white bg-blue-600 rounded-md hover:bg-blue-700 transition"
               >
                 Copiar código
-              </button>
-              <button
-                onClick={closeModal}
-                className="px-4 py-2 text-sm text-white bg-red-600 rounded-md hover:bg-red-700 transition"
-              >
-                Cerrar
               </button>
             </div>
           </div>
