@@ -9,6 +9,7 @@ const Section = ({ title, data }) => {
   const [loadingCode, setLoadingCode] = useState(false)
   const [activeCodeType, setActiveCodeType] = useState("HTML/CSS")
   const [currentComponent, setCurrentComponent] = useState(null)
+  const [isFading, setIsFading] = useState(false)
 
   const openModal = (component) => {
     setIsModalOpen(true)
@@ -48,8 +49,12 @@ const Section = ({ title, data }) => {
         codeType === "HTML/CSS"
           ? currentComponent.codeUrlHtmlCss
           : currentComponent.codeUrlTailwind
-      setActiveCodeType(codeType)
-      loadCode(codeUrl)
+      setIsFading(true)
+      setTimeout(() => {
+        setActiveCodeType(codeType)
+        loadCode(codeUrl)
+        setIsFading(false)
+      }, 300)
     }
   }
 
@@ -135,16 +140,22 @@ const Section = ({ title, data }) => {
               </button>
             </div>
 
-            {loadingCode ? (
-              <p className="text-gray-400">Cargando código...</p>
-            ) : (
-              <pre
-                className="bg-gray-800 p-4 rounded-lg text-sm text-gray-300 overflow-auto flex-grow"
-                style={{ maxHeight: "100%", overflowY: "auto" }}
-              >
-                {codeToShow}
-              </pre>
-            )}
+            <div
+              className={`transition-opacity duration-300 overflow-auto ${
+                isFading ? "opacity-0 pointer-events-none" : "opacity-100"
+              } flex-grow`}
+            >
+              {loadingCode ? (
+                <p className="text-gray-400">Cargando código...</p>
+              ) : (
+                <pre
+                  className="bg-gray-800 p-4 rounded-lg text-sm text-gray-300"
+                  style={{ maxHeight: "100%", overflowY: "auto" }}
+                >
+                  {codeToShow}
+                </pre>
+              )}
+            </div>
 
             <div className="flex justify-end gap-4 mt-4">
               <button
