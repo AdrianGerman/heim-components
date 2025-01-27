@@ -6,12 +6,17 @@ const Section = ({ title, data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [codeToShow, setCodeToShow] = useState("")
   const [loadingCode, setLoadingCode] = useState(false)
+  const [codeType, setCodeType] = useState("htmlCss")
 
-  const openModal = async (codeUrl) => {
+  const openModal = async (component) => {
     setLoadingCode(true)
     setIsModalOpen(true)
     try {
-      const response = await fetch(codeUrl)
+      const response = await fetch(
+        codeType === "htmlCss"
+          ? component.codeUrlHtmlCss
+          : component.codeUrlTailwind
+      )
       const code = await response.text()
       setCodeToShow(code)
     } catch (error) {
@@ -24,6 +29,7 @@ const Section = ({ title, data }) => {
   const closeModal = () => {
     setIsModalOpen(false)
     setCodeToShow("")
+    setCodeType("htmlCss")
   }
 
   const copyToClipboard = () => {
@@ -67,7 +73,7 @@ const Section = ({ title, data }) => {
                 Demo
               </a>
               <button
-                onClick={() => openModal(component.codeUrl)}
+                onClick={() => openModal(component)}
                 className="flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-800 rounded-md hover:bg-gray-700 transition"
               >
                 <Github />
@@ -77,11 +83,34 @@ const Section = ({ title, data }) => {
           </div>
         ))}
       </div>
+
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-[#171717] p-6 rounded-lg w-11/12 md:w-3/4 lg:w-2/3 h-3/5 shadow-lg flex flex-col">
             <h2 className="text-xl font-bold text-gray-100 mb-4">Código</h2>
+            <div className="flex gap-4 mb-4">
+              <button
+                onClick={() => setCodeType("htmlCss")}
+                className={`px-4 py-2 text-sm text-white rounded-md transition ${
+                  codeType === "htmlCss"
+                    ? "bg-blue-600"
+                    : "bg-gray-800 hover:bg-gray-700"
+                }`}
+              >
+                HTML & CSS
+              </button>
+              <button
+                onClick={() => setCodeType("tailwind")}
+                className={`px-4 py-2 text-sm text-white rounded-md transition ${
+                  codeType === "tailwind"
+                    ? "bg-blue-600"
+                    : "bg-gray-800 hover:bg-gray-700"
+                }`}
+              >
+                Tailwind CSS
+              </button>
+            </div>
             {loadingCode ? (
               <p className="text-gray-400">Cargando código...</p>
             ) : (
