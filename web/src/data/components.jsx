@@ -55,7 +55,8 @@ export const components = {
         "Estilo de botón clásico, con un borde para mejorar la visibilidad.",
       image: "/projects/buttons/button-border.webp",
       fileUrl: "/projects/buttons/button-border.html",
-      codeUrlHtmlCss: "/examples/buttons/button-border.html"
+      codeUrlHtmlCss: "/examples/buttons/button-border.html",
+      codeUrlTailwind: "/tailwind/buttons/button-border.html"
     },
     {
       name: "Button dashed",
