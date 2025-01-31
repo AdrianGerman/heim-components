@@ -38,7 +38,8 @@ export const components = {
       description: "Un loader circular simple.",
       image: "/projects/loaders/spinner.gif",
       fileUrl: "/projects/loaders/spinner.html",
-      codeUrlHtmlCss: "/examples/loaders/spinner.html"
+      codeUrlHtmlCss: "/examples/loaders/spinner.html",
+      codeUrlTailwind: "/tailwind/loaders/spinner.html"
     },
     {
       name: "Loader Cuadricular",
