@@ -14,7 +14,8 @@ export const components = {
       description: "Galería de imágenes con efecto vertical de scroll.",
       image: "/projects/images/image-scroll.webp",
       fileUrl: "/projects/images/image-scroll.html",
-      codeUrlHtmlCss: "/examples/images/image-scroll.html"
+      codeUrlHtmlCss: "/examples/images/image-scroll.html",
+      codeUrlTailwind: "/tailwind/images/image-scroll.html"
     },
     {
       name: "Image gallery vertical",
