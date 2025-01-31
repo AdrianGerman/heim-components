@@ -22,7 +22,8 @@ export const components = {
       description: "Galería de imagines vertical con transiciones.",
       image: "/projects/images/image-gallery-vertical.webp",
       fileUrl: "/projects/images/image-gallery-vertical.html",
-      codeUrlHtmlCss: "/examples/images/image-gallery-vertical.html"
+      codeUrlHtmlCss: "/examples/images/image-gallery-vertical.html",
+      codeUrlTailwind: "/tailwind/images/image-gallery-vertical.html"
     },
     {
       name: "Image smart shadow",
