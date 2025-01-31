@@ -46,7 +46,8 @@ export const components = {
       description: "Un loader cuadrado con colores ajustables.",
       image: "/projects/loaders/square.gif",
       fileUrl: "/projects/loaders/square.html",
-      codeUrlHtmlCss: "/examples/loaders/square.html"
+      codeUrlHtmlCss: "/examples/loaders/square.html",
+      codeUrlTailwind: "/tailwind/loaders/square.html"
     }
   ],
   buttons: [
