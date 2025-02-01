@@ -31,7 +31,8 @@ export const components = {
         "Fondo de imagen personalizado en base a la imagen principal.",
       image: "/projects/images/smart-shadow.webp",
       fileUrl: "/projects/images/smart-shadow.html",
-      codeUrlHtmlCss: "/examples/images/smart-shadow.html"
+      codeUrlHtmlCss: "/examples/images/smart-shadow.html",
+      codeUrlTailwind: "/tailwind/images/smart-shadow.html"
     }
   ],
   loaders: [
