@@ -68,14 +68,16 @@ export const components = {
       description: "Estilo de botón con lindo efecto en el borde.",
       image: "/projects/buttons/button-dashed.webp",
       fileUrl: "/projects/buttons/button-dashed.html",
-      codeUrlHtmlCss: "/examples/buttons/button-dashed.html"
+      codeUrlHtmlCss: "/examples/buttons/button-dashed.html",
+      codeUrlTailwind: "/tailwind/buttons/button-dashed.html"
     },
     {
       name: "Hover button",
       description: "Efecto de botones al hacer hover",
       image: "/projects/buttons/hover-button.webp",
       fileUrl: "/projects/buttons/hover-button.html",
-      codeUrlHtmlCss: "/examples/buttons/hover-button.html"
+      codeUrlHtmlCss: "/examples/buttons/hover-button.html",
+      codeUrlTailwind: "/tailwind/buttons/hover-button.html"
     }
   ]
 }
